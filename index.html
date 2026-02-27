@@ -11,9 +11,9 @@
         <header class = "nav">
             <div class = "logo">Uni-Plan</div>
             <nav class = "nav-links">
-                <a href = "#">Home</a>
-                <a href = "#">Features</a>
-                <a href = "#">About</a>
+                <a href = "#home">Home</a>
+                <a href = "#features">Features</a>
+                <a href = "#about">About</a>
             </nav>
             <div class = "nav-buttons">
                 <button class = "login-btn"><a href = "./auth/login.html">Login</a></button>
@@ -28,9 +28,28 @@
                     <h1 class = "hero-title">Uni-Plan: Your Ultimate Student Planner & Study App</h1>
                     <p class = "hero-subtitle">Organize your academic life, boost productivity, and achieve your goals with Uni-Plan.</p>
                     <div class = "hero-actions">
-                        <button class = "get-started-btn">Get Started for Free</button>
+                        <button class = "get-started-btn" onclick = "window.location.href = './auth/register.html'">Get Started for Free</button>
                     </div>
-
+                </div>
+            </section>
+            <section id="features" class="features">
+                <h2 class="features">Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <h3>Task Management</h3>
+                        <p>Organize your to-dos, set priorities, and never miss a deadline.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Study Scheduling</h3>
+                        <p>Block focused study sessions and balance coursework and exams.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your learning journey with charts and achievement badges.</p>
+                    </div>
                 </div>
             </section>
         </main>
