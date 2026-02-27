@@ -1,3 +1,81 @@
-body{
-    background-color: #daecf7;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #dfe9f3, #ffffff);
+    color: #222;
+    line-height: 1.5;
+}
+
+
+.login-container,
+.register-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem 2rem 3rem;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-container h1,
+.register-container h1 {
+    margin-bottom: 1.5rem;
+    color: #6a5acd;
+}
+
+.login-container form input,
+.register-container form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login-container form button,
+.register-container form button {
+    width: 100%;
+    background: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container form button:hover,
+.register-container form button:hover {
+    background: #5848c2;
+}
+
+.login-container p,
+.register-container p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.login-container a,
+.register-container a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+@media (max-width: 480px) {
+    .login-container,
+    .register-container {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
 }
