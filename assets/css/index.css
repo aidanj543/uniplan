@@ -1,3 +1,150 @@
-body{
-    background-color: #daecf7;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body.page {
+    background: linear-gradient(to bottom right, #dfe9f3, #ffffff);
+    color: #222;
+}
+
+
+.nav {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6a5acd;
+}
+
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn {
+    background: transparent;
+    border: 2px solid #6a5acd;
+}
+
+.login-btn a {
+    color: #6a5acd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background: #6a5acd;
+}
+
+.login-btn:hover a {
+    color: white;
+}
+
+.signup-btn {
+    background: #6a5acd;
+}
+
+.signup-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-btn:hover {
+    background: #5848c2;
+}
+
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    background-color:#5848c2 
+    
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.hero > div {
+    position: relative;
+    max-width: 650px;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.get-started-btn {
+    padding: 12px 28px;
+    background: lch(60.93% 11.31 295.15);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.get-started-btn:hover {
+    background: #5848c2;
 }
