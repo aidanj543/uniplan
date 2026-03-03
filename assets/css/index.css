@@ -91,6 +91,7 @@ body.page {
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* place content and logo side by side */
     padding: 0 60px;
     background-color:#5848c2 
     
@@ -104,7 +105,7 @@ body.page {
     background: rgba(0, 0, 0, 0.35);
 }
 
-.hero > div {
+.hero > div, .hero .hero-content {
     position: relative;
     max-width: 650px;
     color: white;
@@ -147,6 +148,30 @@ body.page {
 
 .get-started-btn:hover {
     background: #5848c2;
+}
+
+
+.hero-logo {
+    flex-shrink: 0;
+    margin-left: 40px;
+}
+
+.hero-logo .logo-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-logo {
+        margin: 30px 0 0;
+    }
 }
 
 
