@@ -8,6 +8,11 @@ if (registerForm){
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
+        if (password !== document.getElementById("confirmPassword").value){
+            alert("Passwords do not match!");
+            return;
+        }
+
         const user = {firstName, lastName, email, password};
 
         localStorage.setItem("user", JSON.stringify(user));
