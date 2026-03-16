@@ -11,32 +11,31 @@ app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+    user: "postgres",
+    host: "localhost",
+    database: "uniplan",
+    password: "password",
+    port: 5432,
 });
 
-app.post("/register", async (req, res)=> {
-    try{
-        const { firstName, lastName, email, password } = req.body;
+app.post("/register", async (req, res) => {
+  console.log("REGISTER BODY:", req.body);
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+  try {
 
-        const newUser = await pool.query(
-            "INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING *",
-            [firstName, lastName, email, hashedPassword]
-        );
+    const { first_name, last_name, email, password } = req.body;
 
-        res.json(newUser.rows[0]);
+    const result = await pool.query(
+      "INSERT INTO users (first_name, last_name, email, password) VALUES ($1,$2,$3,$4) RETURNING *",
+      [first_name, last_name, email, password]
+    );
 
-    }catch (err){
-        console.error(err.message);
-        res.status(500).send("Server error");
-    }
-});
+    res.json(result.rows[0]);
 
-app.listen(5000, () => {
-    console.log("Server is running on port 5000");
+  } catch (err) {
+
+    console.error("REGISTER ERROR:", err);
+    res.status(500).json({ message: err.message });
+
+  }
 });
