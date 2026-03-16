@@ -1,41 +1,78 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width-device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <title>Uni-Plan Dashboard</title>
-        <link rel = "stylesheet" href = "main.css"> <!--Edit the css file to change the dashboard. make the changes as you need too.-->
+        <link rel="stylesheet" href="main.css"> <!--Edit the css file to change the dashboard. make the changes as you need too.-->
     </head>
 
     <body>
-        <div class = "container">
-            <div class = "sidebar">
+        <div class="container">
+            <div class="sidebar">
+                <div class="logo">Uni-Plan</div>
                 <ul>
-                    <li>Dashboard</li>
-                    <li>Courses</li>
-                    <li>Assignments</li>
-                    <li>Calendar</li>
-                    <li>Tasks</li>
-                    <li>Settings</li>
+                    <li>🏠 Dashboard</li>
+                    <li>📚 Courses</li>
+                    <li>📝 Assignments</li>
+                    <li>📅 Calendar</li>
+                    <li>✅ Tasks</li>
+                    <li>⚙️ Settings</li>
                 </ul>
             </div>
 
-            <div class= "main">
-
-                <div class = "header">
+            <!-- Main Content -->
+            <div class="main">
+                <div class="topbar">
                     <h1>Dashboard</h1>
-                    <p>Welcome back!</p>
+                    <input class="search" placeholder="Search...">
                 </div>
 
-                <div class = "dashboard">
-                    <div class = "card">
+                <div class="dashboard">
+                    <div class="card">
                         <h3>Today's Overview</h3>
-                        <p>You have ### due today.</p> <!--Will figure out how to auto update this-->
+                        <p>You have <b>3 tasks</b> due today.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <h2>5</h2>
+                                <p>Tasks</p>
+                            </div>
+                            <div class="stat">
+                                <h2>2</h2>
+                                <p>Classes</p>
+                            </div>
+                            <div class="stat">
+                                <h2>1</h2>
+                                <p>Deadline</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasks -->
+                    <div class="card tasks">
+                        <h3>Today's Tasks</h3>
+                        <ul>
+                            <li><input type="checkbox"> Study for exam</li>
+                            <li><input type="checkbox"> Finish discussion post</li>
+                            <li><input type="checkbox"> Work on Uni-Plan project</li>
+                        </ul>
+                    </div>
+
+                    <div class="card deadlines">
+                        <h3>Upcoming Deadlines</h3>
+                        <ul>
+                            <li>Mar 18 — CS Project</li>
+                            <li>Mar 19 — Machiavelli Discussion</li>
+                            <li>Mar 21 — Digital Logic Lab</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Calendar</h3>
+                        <p>Weekly schedule preview coming soon.</p>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-
-
 </html>
