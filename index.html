@@ -7,28 +7,29 @@
         <link rel="stylesheet" href="./assets/css/index.css">
         <title>Uni-Plan | Free Student Planner & Study App</title>
     </head>
-    <body class = "page">
-        <header class = "nav">
-            <div class = "logo">Uni-Plan</div>
-            <nav class = "nav-links">
+    <body class="page">
+        <header class="nav">
+            <a class="logo" href="#home">Uni-Plan</a>
+            <nav class="nav-links" aria-label="Primary navigation">
                 <a href = "#home">Home</a>
                 <a href = "#features">Features</a>
                 <a href = "#about">About</a>
             </nav>
-            <div class = "nav-buttons">
-                <button class = "login-btn"><a href = "./auth/login.html">Login</a></button>
-                <button class = "signup-btn"><a href = "./auth/register.html">Sign Up</a></button>
+            <div class="nav-buttons">
+                <a class="btn login-btn" href="./auth/login.html">Login</a>
+                <a class="btn signup-btn" href="./auth/register.html">Sign Up</a>
             </div>
         </header>
 
         <main>
-            <section id = "home" class = "hero">
+            <section id="home" class="hero">
                 <div class="hero-content">
-                    <div class = "hero-badge">Student Productivity</div>
-                    <h1 class = "hero-title">Uni-Plan: Your Ultimate Student Planner & Study App</h1>
-                    <p class = "hero-subtitle">Organize your academic life, boost productivity, and achieve your goals with Uni-Plan.</p>
-                    <div class = "hero-actions">
-                        <button class = "get-started-btn" onclick = "window.location.href = './auth/register.html'">Get Started for Free</button>
+                    <div class="hero-badge">Student Productivity</div>
+                    <h1 class="hero-title">Uni-Plan: Your Ultimate Student Planner & Study App</h1>
+                    <p class="hero-subtitle">Organize your academic life, boost productivity, and achieve your goals with Uni-Plan.</p>
+                    <div class="hero-actions">
+                        <a class="get-started-btn" href="./auth/register.html">Get Started for Free</a>
+                        <a class="learn-more-btn" href="#features">Explore Features</a>
                     </div>
                 </div>
                 <div class="hero-logo">
@@ -36,7 +37,7 @@
                 </div>
             </section>
             <section id="features" class="features">
-                <h2 class="features">Features</h2>
+                <h2 class="features-title">Features</h2>
                 <div class="feature-list">
                     <div class="feature-item">
                         <div class="feature-icon">📅</div>
@@ -55,9 +56,23 @@
                     </div>
                 </div>
             </section>
-            <section id = "about" class = "about">
-                <h2 class = "about-title">About Uni-Plan</h2>
-                <p>Uni-Plan is a free student planner and study app designed to help students organize their academic life, manage tasks, and improve study habits.</p> 
+            <section id="about" class="about">
+                <h2 class="about-title">About Uni-Plan</h2>
+                <p class="about-copy">Uni-Plan is a free student planner and study app designed to help students organize their academic life, manage tasks, and improve study habits.</p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <h3>Plan Smarter</h3>
+                        <p>Create clear schedules and avoid last-minute stress.</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Stay Focused</h3>
+                        <p>Track what matters most every day and every week.</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Reach Goals</h3>
+                        <p>Build momentum with routines that support long-term success.</p>
+                    </div>
+                </div>
             </section>
         </main>
     </body>
