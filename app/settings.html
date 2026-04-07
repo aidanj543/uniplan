@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Plan Settings</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Uni-Plan</div>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="assignments.html">📝 Assignments</a></li>
+                <li><a href="calendar.html">📅 Calendar</a></li>
+                <li><a href="tasks.html">✅ Tasks</a></li>
+                <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <h1>Settings</h1>
+                <input class="search" placeholder="Search settings...">
+            </div>
+
+            <section class="settings-grid">
+                <article class="card settings-card">
+                    <h3>Profile</h3>
+                    <form class="settings-form">
+                        <label>
+                            Full Name
+                            <input type="text" value="Student User">
+                        </label>
+                        <label>
+                            University Email
+                            <input type="email" value="student@uniplan.edu">
+                        </label>
+                        <label>
+                            Preferred Study Time
+                            <select>
+                                <option>Morning</option>
+                                <option selected>Afternoon</option>
+                                <option>Evening</option>
+                            </select>
+                        </label>
+                        <button type="button">Save Profile</button>
+                    </form>
+                </article>
+
+                <article class="card settings-card">
+                    <h3>Notifications</h3>
+                    <ul class="toggle-list">
+                        <li><span>Assignment reminders</span><input type="checkbox" checked></li>
+                        <li><span>Deadline digest email</span><input type="checkbox" checked></li>
+                        <li><span>Course announcements</span><input type="checkbox"></li>
+                        <li><span>Weekly productivity report</span><input type="checkbox" checked></li>
+                    </ul>
+                </article>
+
+                <article class="card settings-card">
+                    <h3>Appearance</h3>
+                    <div class="theme-options">
+                        <button type="button" class="theme-chip active-chip">Soft Violet</button>
+                        <button type="button" class="theme-chip">Ocean Blue</button>
+                        <button type="button" class="theme-chip">Forest Green</button>
+                    </div>
+                    <p class="settings-note">Theme switching is visual only for now. Full customization coming soon.</p>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

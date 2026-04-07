@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Plan Assignments</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Uni-Plan</div>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="assignments.html" class="active">📝 Assignments</a></li>
+                <li><a href="calendar.html">📅 Calendar</a></li>
+                <li><a href="tasks.html">✅ Tasks</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <h1>Assignments</h1>
+                <input class="search" placeholder="Search assignments...">
+            </div>
+
+            <section class="assignment-layout">
+                <article class="card assignment-highlight">
+                    <h3>This Week</h3>
+                    <p class="assignment-meta">Track upcoming deadlines and course workload at a glance.</p>
+                    <div class="assignment-stats">
+                        <div class="assignment-pill urgent">2 urgent</div>
+                        <div class="assignment-pill soon">4 due soon</div>
+                        <div class="assignment-pill done">9 submitted</div>
+                    </div>
+                </article>
+
+                <article class="card assignment-list-card">
+                    <h3>Upcoming Work</h3>
+                    <ul class="assignment-list">
+                        <li>
+                            <div>
+                                <strong>Database Project Milestone</strong>
+                                <p>Web Application • Due Apr 10</p>
+                            </div>
+                            <span class="status-badge high">High</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Logic Design Lab Report</strong>
+                                <p>Digital Electronics • Due Apr 12</p>
+                            </div>
+                            <span class="status-badge medium">Medium</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Discussion Post: Renaissance Politics</strong>
+                                <p>Humanities • Due Apr 14</p>
+                            </div>
+                            <span class="status-badge low">Low</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="card assignment-board-card">
+                    <h3>Submission Board</h3>
+                    <div class="assignment-board">
+                        <div class="board-column">
+                            <h4>To Start</h4>
+                            <p>2 items</p>
+                        </div>
+                        <div class="board-column">
+                            <h4>In Progress</h4>
+                            <p>3 items</p>
+                        </div>
+                        <div class="board-column">
+                            <h4>Ready to Submit</h4>
+                            <p>1 item</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
