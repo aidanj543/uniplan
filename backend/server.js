@@ -18,16 +18,6 @@ const pool = new Pool({
   port: Number(process.env.DB_PORT) || 5432,
 });
 
-const getUserTableColumns = async () => {
-  const { rows } = await pool.query(
-    `SELECT column_name
-     FROM information_schema.columns
-     WHERE table_schema = 'public' AND table_name = 'users'`
-  );
-
-  return new Set(rows.map((row) => row.column_name));
-};
-
 app.get("/health", async (_req, res) => {
   try {
     await pool.query("SELECT 1");
@@ -45,18 +35,12 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const userColumns = await getUserTableColumns();
     const password_hash = await bcrypt.hash(password, 10);
-    const storesHashedPassword = userColumns.has("password_hash");
-    const passwordColumn = storesHashedPassword ? "password_hash" : "password";
-    const returnCreatedAt = userColumns.has("created_at")
-      ? ", created_at"
-      : "";
 
     const result = await pool.query(
-      `INSERT INTO users (first_name, last_name, email, ${passwordColumn})
+      `INSERT INTO users (first_name, last_name, email, password_hash)
        VALUES ($1, $2, $3, $4)
-       RETURNING id, first_name, last_name, email${returnCreatedAt}`,
+       RETURNING id, first_name, last_name, email, created_at`,
       [first_name, last_name, email, password_hash]
     );
 
@@ -79,17 +63,8 @@ app.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Email and password are required" });
     }
 
-    const userColumns = await getUserTableColumns();
-    const hasPasswordHash = userColumns.has("password_hash");
-    const hasPassword = userColumns.has("password");
-
-    if (!hasPasswordHash && !hasPassword) {
-      return res.status(500).json({ message: "Users table has no password column" });
-    }
-
-    const selectedPasswordColumn = hasPasswordHash ? "password_hash" : "password";
     const result = await pool.query(
-      `SELECT id, first_name, last_name, email, ${selectedPasswordColumn}
+      `SELECT id, first_name, last_name, email, password_hash
        FROM users
        WHERE email = $1`,
       [email]
@@ -100,12 +75,7 @@ app.post("/login", async (req, res) => {
     }
 
     const user = result.rows[0];
-    const storedPassword = user[selectedPasswordColumn];
-    const looksLikeBcryptHash =
-      typeof storedPassword === "string" && storedPassword.startsWith("$2");
-    const isMatch = looksLikeBcryptHash
-      ? await bcrypt.compare(password, storedPassword)
-      : password === storedPassword;
+    const isMatch = await bcrypt.compare(password, user.password_hash);
 
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid credentials" });
