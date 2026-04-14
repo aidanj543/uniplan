@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Plan Calendar</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Uni-Plan</div>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="assignments.html">📝 Assignments</a></li>
+                <li><a href="calendar.html" class="active">📅 Calendar</a></li>
+                <li><a href="tasks.html">✅ Tasks</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <h1>Calendar</h1>
+                <input class="search" placeholder="Search events...">
+            </div>
+
+            <section class="calendar-layout">
+                <article class="card calendar-overview">
+                    <h3>Week of April 14</h3>
+                    <p class="task-meta">Your upcoming classes, submissions, and focus sessions.</p>
+                    <div class="assignment-stats">
+                        <div class="assignment-pill soon">8 events</div>
+                        <div class="assignment-pill urgent">2 deadlines</div>
+                        <div class="assignment-pill done">1 completed</div>
+                    </div>
+                </article>
+
+                <article class="card calendar-grid-card">
+                    <h3>Weekly schedule</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-head">Mon</div>
+                        <div class="calendar-head">Tue</div>
+                        <div class="calendar-head">Wed</div>
+                        <div class="calendar-head">Thu</div>
+                        <div class="calendar-head">Fri</div>
+                        <div class="calendar-cell">
+                            <span>09:00</span>
+                            <p>Web Application</p>
+                        </div>
+                        <div class="calendar-cell">
+                            <span>11:30</span>
+                            <p>Project Standup</p>
+                        </div>
+                        <div class="calendar-cell">
+                            <span>14:00</span>
+                            <p>Digital Electronics Lab</p>
+                        </div>
+                        <div class="calendar-cell">
+                            <span>16:00</span>
+                            <p>Humanities Seminar</p>
+                        </div>
+                        <div class="calendar-cell">
+                            <span>18:00</span>
+                            <p>Assignment Review</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Upcoming reminders</h3>
+                    <ul class="assignment-list">
+                        <li>
+                            <div>
+                                <strong>Database Project Milestone</strong>
+                                <p>Thursday • 11:59 PM</p>
+                            </div>
+                            <span class="status-badge high">Urgent</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Team Sync Meeting</strong>
+                                <p>Wednesday • 2:00 PM</p>
+                            </div>
+                            <span class="status-badge medium">Planned</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Readings for Humanities</strong>
+                                <p>Friday • 9:00 AM</p>
+                            </div>
+                            <span class="status-badge low">Low</span>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

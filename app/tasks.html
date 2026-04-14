@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uni-Plan Tasks</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">Uni-Plan</div>
+            <ul>
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="courses.html">📚 Courses</a></li>
+                <li><a href="assignments.html">📝 Assignments</a></li>
+                <li><a href="calendar.html">📅 Calendar</a></li>
+                <li><a href="tasks.html" class="active">✅ Tasks</a></li>
+                <li><a href="settings.html">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <h1>Tasks</h1>
+                <input class="search" placeholder="Search tasks...">
+            </div>
+
+            <section class="task-layout">
+                <article class="card task-summary">
+                    <h3>Today at a glance</h3>
+                    <p class="task-meta">Keep your workload focused and prioritize what matters most.</p>
+                    <div class="assignment-stats">
+                        <div class="assignment-pill urgent">3 high priority</div>
+                        <div class="assignment-pill soon">5 in progress</div>
+                        <div class="assignment-pill done">7 completed</div>
+                    </div>
+                </article>
+
+                <article class="card task-list-card">
+                    <h3>Task checklist</h3>
+                    <ul class="task-list">
+                        <li>
+                            <label><input type="checkbox"> Finalize API integration for project</label>
+                            <span class="status-badge high">Due today</span>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" checked> Review lecture notes for Digital Electronics</label>
+                            <span class="status-badge medium">Due tomorrow</span>
+                        </li>
+                        <li>
+                            <label><input type="checkbox"> Draft Humanities discussion response</label>
+                            <span class="status-badge low">This week</span>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" checked> Organize references for lab report</label>
+                            <span class="status-badge low">Completed</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Focus blocks</h3>
+                    <div class="task-focus-grid">
+                        <div class="board-column">
+                            <h4>Deep Work</h4>
+                            <p>2 sessions • 90 minutes</p>
+                        </div>
+                        <div class="board-column">
+                            <h4>Quick Wins</h4>
+                            <p>4 sessions • 20 minutes</p>
+                        </div>
+                        <div class="board-column">
+                            <h4>Breaks</h4>
+                            <p>3 planned recovery breaks</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
