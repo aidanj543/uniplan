@@ -1,4 +1,9 @@
-document.getElementById("registerForm").addEventListener("submit", async function (e) { // registration
+const API_BASE_URL = "http://localhost:5000";
+
+const registerForm = document.getElementById("registerForm");
+
+if (registerForm) {
+  registerForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const firstName = document.getElementById("firstName").value;
@@ -7,57 +12,73 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
-    
     if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
+      alert("Passwords do not match");
+      return;
     }
 
     const userData = {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password
+      first_name: firstName,
+      last_name: lastName,
+      email,
+      password,
     };
 
     try {
+      const response = await fetch(`${API_BASE_URL}/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
 
-        const response = await fetch("http://localhost:5000/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData)
-        });
+      const data = await response.json();
 
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Registration successful!");
-            window.location.href = "login.html";
-        } else {
-            alert(data.message || "Registration failed");
-        }
-
+      if (response.ok) {
+        alert("Registration successful!");
+        window.location.href = "login.html";
+      } else {
+        alert(data.message || "Registration failed");
+      }
     } catch (error) {
-        console.error(error);
-        alert("Server error");
+      console.error(error);
+      alert("Server error");
     }
-});
+  });
+}
 
-const loginForm = document.getElementById("loginForm"); //login
+const loginForm = document.getElementById("loginForm");
 
-if(loginForm){
-    loginForm.addEventListener("submit", async(e) => {
-        e.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+if (loginForm) {
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-        if(storedUser && storedUser.email === email && storedUser.password === password){
-            console.log("Login successful!");
-            window.location.href = "dashboard.html";
-        }
-    })
+    try {
+      const response = await fetch(`${API_BASE_URL}/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || "Login failed");
+        return;
+      }
+
+      localStorage.setItem("user", JSON.stringify(data.user));
+      alert("Login successful!");
+      window.location.href = "../dashboard.html";
+    } catch (error) {
+      console.error(error);
+      alert("Server error");
+    }
+  });
 }
