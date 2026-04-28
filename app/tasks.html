@@ -39,7 +39,7 @@
 
                 <article class="card task-list-card">
                     <h3>Task checklist</h3>
-                    <ul class="task-list">
+                    <ul class="task-list" id="userTaskList">
                         <li>
                             <label><input type="checkbox"> Finalize API integration for project</label>
                             <span class="status-badge high">Due today</span>
@@ -76,8 +76,116 @@
                         </div>
                     </div>
                 </article>
+
+                <article class="card task-form-card">
+                    <h3>Add a task</h3>
+                    <form class="task-form" id="taskForm">
+                        <label>
+                            Task name
+                            <input type="text" name="title" placeholder="Example: Finish database diagram" required>
+                        </label>
+                        <label>
+                            Course
+                            <select name="course">
+                                <option>Web Application</option>
+                                <option>Digital Electronics</option>
+                                <option>Humanities</option>
+                                <option>Data Structures</option>
+                            </select>
+                        </label>
+                        <label>
+                            Due date
+                            <input type="date" name="due_date">
+                        </label>
+                        <label>
+                            Priority
+                            <select name="priority">
+                                <option>Medium</option>
+                                <option>High</option>
+                                <option>Low</option>
+                            </select>
+                        </label>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </article>
+
+                <article class="card task-priority-card">
+                    <h3>Priority board</h3>
+                    <div class="priority-board">
+                        <div class="priority-column high-priority">
+                            <h4>High</h4>
+                            <p>API integration</p>
+                            <p>Database milestone</p>
+                        </div>
+                        <div class="priority-column medium-priority">
+                            <h4>Medium</h4>
+                            <p>Lecture review</p>
+                            <p>Team meeting prep</p>
+                        </div>
+                        <div class="priority-column low-priority">
+                            <h4>Low</h4>
+                            <p>Clean notes folder</p>
+                            <p>Update study playlist</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card task-goals-card">
+                    <h3>Weekly goals</h3>
+                    <div class="progress-list">
+                        <div class="progress-row">
+                            <div>
+                                <strong>Complete assignments</strong>
+                                <span>60%</span>
+                            </div>
+                            <progress value="60" max="100"></progress>
+                        </div>
+                        <div class="progress-row">
+                            <div>
+                                <strong>Study hours</strong>
+                                <span>75%</span>
+                            </div>
+                            <progress value="75" max="100"></progress>
+                        </div>
+                        <div class="progress-row">
+                            <div>
+                                <strong>Reading notes</strong>
+                                <span>40%</span>
+                            </div>
+                            <progress value="40" max="100"></progress>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card task-reminders-card">
+                    <h3>Reminders</h3>
+                    <ul class="assignment-list">
+                        <li>
+                            <div>
+                                <strong>Submit lab report</strong>
+                                <p>Tonight • 8:00 PM</p>
+                            </div>
+                            <span class="status-badge high">Soon</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Email project group</strong>
+                                <p>Tomorrow • 10:00 AM</p>
+                            </div>
+                            <span class="status-badge medium">Planned</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Check grade feedback</strong>
+                                <p>Friday • 1:00 PM</p>
+                            </div>
+                            <span class="status-badge low">Later</span>
+                        </li>
+                    </ul>
+                </article>
             </section>
         </div>
     </div>
+    <script src="../assets/js/modules/app-data.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@
 
                 <article class="card assignment-list-card">
                     <h3>Upcoming Work</h3>
-                    <ul class="assignment-list">
+                    <ul class="assignment-list" id="userAssignmentList">
                         <li>
                             <div>
                                 <strong>Database Project Milestone</strong>
@@ -81,8 +81,45 @@
                         </div>
                     </div>
                 </article>
+
+                <article class="card assignment-form-card">
+                    <h3>Add assignment</h3>
+                    <form class="task-form" id="assignmentForm">
+                        <label>
+                            Assignment title
+                            <input type="text" name="title" placeholder="Example: Chapter 5 quiz" required>
+                        </label>
+                        <label>
+                            Course
+                            <input type="text" name="course" placeholder="Example: Web Application">
+                        </label>
+                        <label>
+                            Due date
+                            <input type="date" name="due_date">
+                        </label>
+                        <label>
+                            Priority
+                            <select name="priority">
+                                <option>Medium</option>
+                                <option>High</option>
+                                <option>Low</option>
+                            </select>
+                        </label>
+                        <label>
+                            Status
+                            <select name="status">
+                                <option>To Start</option>
+                                <option>In Progress</option>
+                                <option>Ready to Submit</option>
+                                <option>Submitted</option>
+                            </select>
+                        </label>
+                        <button type="submit">Add Assignment</button>
+                    </form>
+                </article>
             </section>
         </div>
     </div>
+    <script src="../assets/js/modules/app-data.js"></script>
 </body>
 </html>

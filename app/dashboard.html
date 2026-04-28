@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Uni-Plan Dashboard</title>
         <link rel="stylesheet" href="../assets/css/main.css"> <!--Edit the css file to change the dashboard. make the changes as you need too.-->
     </head>
@@ -12,7 +12,7 @@
             <div class="sidebar">
                 <div class="logo">Uni-Plan</div>
                 <ul>
-                    <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                    <li><a href="dashboard.html" class="active">🏠 Dashboard</a></li>
                     <li><a href = "courses.html">📚 Courses</a></li>
                     <li><a href = "assignments.html">📝 Assignments</a></li>
                     <li><a href = "calendar.html">📅 Calendar</a></li>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="dashboard">
-                    <div class="card">
+                    <article class="card dashboard-hero">
                         <h3>Today's Overview</h3>
                         <p>You have <b>3 tasks</b> due today.</p>
                         <div class="stats">
@@ -46,31 +46,95 @@
                                 <p>Deadline</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                     <!-- Tasks -->
-                    <div class="card tasks">
+                    <article class="card tasks">
                         <h3>Today's Tasks</h3>
                         <ul>
                             <li><input type="checkbox"> Study for exam</li>
                             <li><input type="checkbox"> Finish discussion post</li>
                             <li><input type="checkbox"> Work on Uni-Plan project</li>
                         </ul>
-                    </div>
+                    </article>
 
-                    <div class="card deadlines">
+                    <article class="card dashboard-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-grid">
+                            <a href="courses.html">View Courses</a>
+                            <a href="assignments.html">Add Assignment</a>
+                            <a href="calendar.html">Open Calendar</a>
+                            <a href="tasks.html">Manage Tasks</a>
+                        </div>
+                    </article>
+
+                    <article class="card deadlines">
                         <h3>Upcoming Deadlines</h3>
                         <ul>
                             <li>Mar 18 — CS Project</li>
                             <li>Mar 19 — Machiavelli Discussion</li>
                             <li>Mar 21 — Digital Logic Lab</li>
                         </ul>
-                    </div>
+                    </article>
 
-                    <div class="card">
-                        <h3>Calendar</h3>
-                        <p>Weekly schedule preview coming soon.</p>
-                    </div>
+                    <article class="card dashboard-schedule">
+                        <h3>Weekly Schedule</h3>
+                        <div class="mini-schedule">
+                            <div>
+                                <span>Mon</span>
+                                <p>09:00 Web Application</p>
+                            </div>
+                            <div>
+                                <span>Tue</span>
+                                <p>11:30 Project Standup</p>
+                            </div>
+                            <div>
+                                <span>Wed</span>
+                                <p>14:00 Digital Electronics Lab</p>
+                            </div>
+                            <div>
+                                <span>Thu</span>
+                                <p>16:00 Humanities Seminar</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card dashboard-progress">
+                        <h3>Course Progress</h3>
+                        <div class="progress-list">
+                            <div class="progress-row">
+                                <div>
+                                    <strong>Web Application</strong>
+                                    <span>30%</span>
+                                </div>
+                                <progress value="30" max="100"></progress>
+                            </div>
+                            <div class="progress-row">
+                                <div>
+                                    <strong>Humanities</strong>
+                                    <span>70%</span>
+                                </div>
+                                <progress value="70" max="100"></progress>
+                            </div>
+                            <div class="progress-row">
+                                <div>
+                                    <strong>Digital Electronics</strong>
+                                    <span>45%</span>
+                                </div>
+                                <progress value="45" max="100"></progress>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card dashboard-focus">
+                        <h3>Focus Plan</h3>
+                        <p class="task-meta">Next study block: 45 minutes for Web Application.</p>
+                        <div class="assignment-stats">
+                            <div class="assignment-pill urgent">Priority: project</div>
+                            <div class="assignment-pill soon">Break at 3:30</div>
+                            <div class="assignment-pill done">2 blocks done</div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>

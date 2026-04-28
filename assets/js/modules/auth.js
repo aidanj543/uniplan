@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "http://localhost:5001";
 
 const registerForm = document.getElementById("registerForm");
 
@@ -75,7 +75,7 @@ if (loginForm) {
 
       localStorage.setItem("user", JSON.stringify(data.user));
       alert("Login successful!");
-      window.location.href = "../dashboard.html";
+      window.location.href = "../app/dashboard.html";
     } catch (error) {
       console.error(error);
       alert("Server error");

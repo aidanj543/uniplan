@@ -1,18 +1,15 @@
-version: "3.9"
-
 services:
   db:
-    image: postgres:15
-    container_name: uniplan_db
+    image: mysql:8.4
+    container_name: uniplan_mysql
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: uniplan
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: uniplan
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - mysqldata:/var/lib/mysql
 
 volumes:
-  pgdata:
+  mysqldata:

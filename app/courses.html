@@ -29,8 +29,39 @@
                 <input class="search" placeholder="Search courses...">
             </div>
 
-            <div class="dashboard">
-                <div class="card">
+            <div class="dashboard" id="userCourses">
+                <article class="card course-form-card">
+                    <h3>Add a course</h3>
+                    <form class="task-form" id="courseForm">
+                        <label>
+                            Course name
+                            <input type="text" name="name" placeholder="Example: Computer Networks" required>
+                        </label>
+                        <label>
+                            Instructor
+                            <input type="text" name="instructor" placeholder="Professor name">
+                        </label>
+                        <label>
+                            Progress
+                            <input type="number" name="progress" min="0" max="100" placeholder="0-100">
+                        </label>
+                        <label>
+                            Assignments
+                            <input type="number" name="assignments" min="0" placeholder="0">
+                        </label>
+                        <label>
+                            Exams
+                            <input type="number" name="exams" min="0" placeholder="0">
+                        </label>
+                        <label>
+                            Credits
+                            <input type="number" name="credits" min="0" placeholder="0">
+                        </label>
+                        <button type="submit">Add Course</button>
+                    </form>
+                </article>
+
+                <article class="card course-card">
                     <h3>Digital Electronics</h3>
                     <p>Instructor: Vuglar</p>
                     <p>Progress: 45%</p>
@@ -48,10 +79,9 @@
                             <p>Credits</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
-
-                <div class="card">
+                <article class="card course-card">
                     <h3>Humanities</h3>
                     <p>Instructor: Stout</p>
                     <p>Progress: 70%</p>
@@ -69,10 +99,9 @@
                             <p>Credits</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
-
-                <div class="card">
+                <article class="card course-card">
                     <h3>Web Application</h3>
                     <p>Instructor: Hepsiba</p>
                     <p>Progress: 30%</p>
@@ -90,11 +119,112 @@
                             <p>Credits</p>
                         </div>
                     </div>
-                </div>
+                </article>
+
+                <article class="card course-card">
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Instructor: Gilmour</p>
+                    <p>Progress: 70%</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h2>4</h2>
+                            <p>Assignments</p>
+                        </div>
+                        <div class="stat">
+                            <h2>1</h2>
+                            <p>Exam</p>
+                        </div>
+                        <div class="stat">
+                            <h2>12</h2>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card course-card">
+                    <h3>Database Systems</h3>
+                    <p>Instructor: Patel</p>
+                    <p>Progress: 55%</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h2>5</h2>
+                            <p>Assignments</p>
+                        </div>
+                        <div class="stat">
+                            <h2>2</h2>
+                            <p>Exams</p>
+                        </div>
+                        <div class="stat">
+                            <h2>9</h2>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card course-card">
+                    <h3>Software Engineering</h3>
+                    <p>Instructor: Nguyen</p>
+                    <p>Progress: 40%</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h2>3</h2>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h2>1</h2>
+                            <p>Exam</p>
+                        </div>
+                        <div class="stat">
+                            <h2>11</h2>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card course-card">
+                    <h3>Calculus II</h3>
+                    <p>Instructor: Brooks</p>
+                    <p>Progress: 62%</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h2>6</h2>
+                            <p>Assignments</p>
+                        </div>
+                        <div class="stat">
+                            <h2>3</h2>
+                            <p>Exams</p>
+                        </div>
+                        <div class="stat">
+                            <h2>10</h2>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card course-card">
+                    <h3>Technical Writing</h3>
+                    <p>Instructor: Kim</p>
+                    <p>Progress: 80%</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h2>4</h2>
+                            <p>Papers</p>
+                        </div>
+                        <div class="stat">
+                            <h2>0</h2>
+                            <p>Exams</p>
+                        </div>
+                        <div class="stat">
+                            <h2>7</h2>
+                            <p>Credits</p>
+                        </div>
+                    </div>
+                </article>
 
                 <!--I will figure out how to automatically add courses based on the user-->
             </div>
         </div>
     </div>
+    <script src="../assets/js/modules/app-data.js"></script>
 </body>
 </html>

@@ -37,9 +37,45 @@
                     </div>
                 </article>
 
+                <article class="card calendar-form-card">
+                    <h3>Add event</h3>
+                    <form class="task-form" id="eventForm">
+                        <label>
+                            Event title
+                            <input type="text" name="title" placeholder="Example: Study group" required>
+                        </label>
+                        <label>
+                            Day
+                            <select name="event_day">
+                                <option>Mon</option>
+                                <option>Tue</option>
+                                <option>Wed</option>
+                                <option>Thu</option>
+                                <option>Fri</option>
+                                <option>Sat</option>
+                                <option>Sun</option>
+                            </select>
+                        </label>
+                        <label>
+                            Time
+                            <input type="time" name="event_time">
+                        </label>
+                        <label>
+                            Type
+                            <select name="event_type">
+                                <option>Class</option>
+                                <option>Deadline</option>
+                                <option>Study</option>
+                                <option>Meeting</option>
+                            </select>
+                        </label>
+                        <button type="submit">Add Event</button>
+                    </form>
+                </article>
+
                 <article class="card calendar-grid-card">
                     <h3>Weekly schedule</h3>
-                    <div class="calendar-grid">
+                    <div class="calendar-grid" id="userEventGrid">
                         <div class="calendar-head">Mon</div>
                         <div class="calendar-head">Tue</div>
                         <div class="calendar-head">Wed</div>
@@ -70,7 +106,7 @@
 
                 <article class="card">
                     <h3>Upcoming reminders</h3>
-                    <ul class="assignment-list">
+                    <ul class="assignment-list" id="userEventReminders">
                         <li>
                             <div>
                                 <strong>Database Project Milestone</strong>
@@ -97,5 +133,6 @@
             </section>
         </div>
     </div>
+    <script src="../assets/js/modules/app-data.js"></script>
 </body>
 </html>
