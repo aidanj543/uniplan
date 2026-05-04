@@ -43,10 +43,30 @@ body.page {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.8rem;
     font-weight: 700;
     color: #4a4a4a;
     text-decoration: none;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: inline-flex;
+    overflow: hidden;
+    background: var(--primary);
+    box-shadow: 0 4px 12px rgba(88, 72, 194, 0.22);
+}
+
+.brand-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(2.35);
 }
 
 .nav-links {
@@ -224,14 +244,24 @@ body.page {
 }
 
 .hero-logo {
+    width: clamp(210px, 28vw, 340px);
+    height: clamp(210px, 28vw, 340px);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 24px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 48px rgba(18, 16, 72, 0.24);
     flex-shrink: 0;
 }
 
 .hero-logo .logo-image {
-    max-width: 240px;
     width: 100%;
-    height: auto;
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.6);
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.2));
 }
 
 .features {
@@ -619,6 +649,11 @@ body.page {
 
     .logo {
         font-size: 1.35rem;
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px;
     }
 
     .nav-links {
